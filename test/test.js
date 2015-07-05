@@ -18,6 +18,7 @@ describe("deepMixin(out, ...objects)", function() {
                 bar: "foo"
             }
         }, {
+            name: "Frank",
             age: 42,
             array: [1, 2]
         }), {

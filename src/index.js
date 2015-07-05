@@ -1,4 +1,5 @@
 var keys = require("keys"),
+    isObject = require("is_object"),
     isArrayLike = require("is_array_like"),
     isNullOrUndefined = require("is_null_or_undefined");
 
@@ -38,14 +39,10 @@ function mixin(object, key, value) {
     if (isNullOrUndefined(objectValue)) {
         object[key] = value;
     } else {
-        if (isArrayLike(value)) {
-            if (isArrayLike(objectValue)) {
-                mixinArray(objectValue, value);
-            } else {
-                object[key] = value;
-            }
-        } else {
-            baseDeepMixin(object[key], value);
+        if (isArrayLike(value) && isArrayLike(objectValue)) {
+            mixinArray(objectValue, value);
+        } else if (isObject(value) && isObject(objectValue)) {
+            baseDeepMixin(objectValue, value);
         }
     }
 }
