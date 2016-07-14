@@ -1,7 +1,7 @@
-var keys = require("keys"),
-    isObject = require("is_object"),
-    isArrayLike = require("is_array_like"),
-    isNullOrUndefined = require("is_null_or_undefined");
+var keys = require("@nathanfaucett/keys"),
+    isObject = require("@nathanfaucett/is_object"),
+    isArrayLike = require("@nathanfaucett/is_array_like"),
+    isNullOrUndefined = require("@nathanfaucett/is_null_or_undefined");
 
 
 module.exports = deepMixin;
